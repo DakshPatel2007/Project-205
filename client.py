@@ -114,29 +114,22 @@ def gameWindow():
     global canvas2
     global screen_width
     global screen_height
-    global dice
-    global winingMessage
+    global dice 
+    global winningMessage 
     global resetButton
     global flashNumberLabel
-
+    
     gameWindow = Tk()
-    gameWindow.title("Tambola Family Fun")
+    gameWindow.title("Tambola Game")
     gameWindow.geometry('800x600')
-
     screen_width = gameWindow.winfo_screenwidth()
     screen_height = gameWindow.winfo_screenheight()
-
     bg = ImageTk.PhotoImage(file = "./assets/background.png")
-
-    canvas2 = Canvas( gameWindow, width = 500,height = 500)
-    canvas2.pack(fill = "both", expand = True)
-
-
-    canvas2.create_image( 0, 0, image = bg, anchor = "nw")
-
-
-    canvas2.create_text( screen_width/4.5,50, text = "Tambola Family Fun", font=("Chalkboard SE",50), fill="#3e2723")
-
+    canvas2 = Canvas(gameWindow,width=500,height=500)
+    canvas2.pack(fill = "both",expand = True)
+    canvas2.create_image(0,0,image = bg,anchor = "nw")
+    canvas2.create_text(screen_width/4.5,50,text = "Tambola", font = ("Chalkboard SE", 50),fill = "black")
+    
     createTicket()
     placeNumbers()
 
